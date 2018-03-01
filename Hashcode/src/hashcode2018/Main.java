@@ -1,4 +1,4 @@
-//package hashcode2018; 
+package hashcode2018; 
  
 import java.io.*; 
 import java.util.Scanner; 
@@ -22,7 +22,8 @@ public class Main
     int[][] rideFrom = new int[3][2]; 
     int[][] rideTo = new int[3][2]; 
     int earliestStart = 0; 
-    int latestFinish = 0; 
+    int latestFinish = 0;
+    int step=0;
      
     readFile(); 
     while(i < 6) 
@@ -64,7 +65,7 @@ public class Main
     
     
 
-     
+     step++;
 //    while(i < 6) 
 //    { 
 //      System.out.print(input[i]); 

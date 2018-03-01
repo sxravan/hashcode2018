@@ -1,4 +1,4 @@
-//package hashcode2018;
+package hashcode2018;
 
 public class Ride {
 	
@@ -6,7 +6,17 @@ public class Ride {
 	Coordinate final_intersection;
 	int earliest;
 	int latest;
+	int id;
 	
+	public void setId(int id)
+	{
+		this.id=id;
+	}
+	
+	public int getId()
+	{
+		return id;
+	}
 	public void setStartIntersection(int x, int y)
 	{
 		start_intersection = new Coordinate(x, y);
