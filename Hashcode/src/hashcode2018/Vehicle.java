@@ -84,4 +84,9 @@ public class Vehicle
   {
     return inRide;
   }
+
+  public ArrayList<Integer> getRides()
+  {
+    return rides;
+  }
 }

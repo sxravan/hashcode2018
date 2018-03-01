@@ -7,6 +7,15 @@ public class Ride {
 	int earliest;
 	int latest;
 	int id;
+
+	public Ride(int id,Coordinate s,Coordinate f,int e,int l)
+  {
+    start_intersection=s;
+    final_intersection=f;
+    earliest=e;
+    latest=l;
+    this.id=id;
+  }
 	
 	public void setId(int id)
 	{
