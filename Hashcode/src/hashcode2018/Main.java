@@ -22,10 +22,7 @@ public class Main
       input = new int[6]; 
       int i=0; 
       int c=0;
-      int[][] rideFrom = new int[input[ride]][2]; 
-      int[][] rideTo = new int[input[ride]][2]; 
-      int[] earliestStart = new int[input[ride]]; 
-      int[] latestFinish = new int[input[ride]];
+      
       int step=0;
       
       readFile(); 
@@ -33,7 +30,12 @@ public class Main
       { 
         input[i] = Integer.parseInt(inFile.next()); 
         i++; 
-      } 
+      }
+      
+      int[][] rideFrom = new int[input[ride]][2]; 
+      int[][] rideTo = new int[input[ride]][2]; 
+      int[] earliestStart = new int[input[ride]]; 
+      int[] latestFinish = new int[input[ride]];
       
       Ride[] rides = new Ride[input[ride]];
       
@@ -47,16 +49,19 @@ public class Main
         { 
           map[a][b] = 0; 
         } 
-      } 
+      }
+      
+      System.out.print(rideFrom[0][0]);
       
       for (i = 0; i < input[ride]; i++) 
-      { 
+      {
         rideFrom[i][0] = Integer.parseInt(inFile.next()); 
         rideFrom[i][1] = Integer.parseInt(inFile.next()); 
         rideTo[i][0] = Integer.parseInt(inFile.next()); 
         rideTo[i][1] = Integer.parseInt(inFile.next()); 
         earliestStart[i] = Integer.parseInt(inFile.next()); 
-        latestFinish[i] = Integer.parseInt(inFile.next()); 
+        latestFinish[i] = Integer.parseInt(inFile.next());
+        
       }
 
       for (i=0;i<rides.length;i++)
