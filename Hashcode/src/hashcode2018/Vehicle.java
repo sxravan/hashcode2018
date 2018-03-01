@@ -43,12 +43,20 @@ public class Vehicle
 
     if (phase == PHASE_GO_TO_START_INTERSECTION)
       if (currentPosition.equals(startIntersection))
+<<<<<<< HEAD
         phase = PHASE_WAITING;
+=======
+        phase = WAITING;
+>>>>>>> master
       else
         moveVehicleTowardsDesiredCoordinate(startIntersection);
 
     if (phase == PHASE_WAITING)
+<<<<<<< HEAD
       if (step >= assignedRide.getEarliest())
+=======
+      if (step >= ride.getEarliest())
+>>>>>>> master
         phase = PHASE_GO_TO_FINAL_INTERSECTION;
 
     if (phase == PHASE_GO_TO_FINAL_INTERSECTION)
@@ -56,6 +64,7 @@ public class Vehicle
         rideStatus = NOT_DOING_RIDE;
       else
         moveVehicleTowardsDesiredCoordinate(finalIntersection);
+<<<<<<< HEAD
   }
   
   public void moveVehicleTowardsDesiredCoordinate(Coordinate st)
@@ -75,5 +84,8 @@ public class Vehicle
 	  else if (y < b)
 		  b--;
 	  
+=======
+    }
+>>>>>>> master
   }
 }
