@@ -3,7 +3,7 @@ package hashcode2018;
 public class Ride {
 	
 	Coordinate start_intersection;
-	Coordinate finish_intersection;
+	Coordinate final_intersection;
 	int earliest;
 	int latest;
 	
@@ -17,14 +17,14 @@ public class Ride {
 		return start_intersection;
 	}
 	
-	public void setFinishIntersection(int x, int y)
+	public void setFinalIntersection(int x, int y)
 	{
-		finish_intersection = new Coordinate(x, y);
+		final_intersection = new Coordinate(x, y);
 	}
 	
-	public Coordinate getFinishIntersection()
+	public Coordinate getFinalIntersection()
 	{
-		return finish_intersection;
+		return final_intersection;
 	}
 	
 	public void setEarliest(int e)
