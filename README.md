@@ -2,4 +2,4 @@
 
 Hello Hashcoders
 
-33 minutes left.
+30 minutes left.
