@@ -12,8 +12,6 @@ public class Main
   public static int[] input; 
   static final int row = 0, column = 1, vehicle = 2, ride = 3, bonus = 4, steps = 5; 
   
-  
- 
   public static void main(String[] args) 
   { 
     input = new int[6]; 
