@@ -10,12 +10,15 @@ public class Main
   public static Scanner inFile = null; 
   public static int[][] map; 
   public static int[] input; 
-  static final int row = 0, column = 1, vehicle = 2, rides = 3, bonus = 4, steps = 5; 
+  static final int row = 0, column = 1, vehicle = 2, ride = 3, bonus = 4, steps = 5; 
+  
+  
  
   public static void main(String[] args) 
   { 
     input = new int[6]; 
     int i=0; 
+    int c=0;
     int[][] rideFrom = new int[3][2]; 
     int[][] rideTo = new int[3][2]; 
     int earliestStart = 0; 
@@ -27,6 +30,10 @@ public class Main
       input[i] = Integer.parseInt(inFile.next()); 
       i++; 
     } 
+    
+    Ride[] rides=new Ride[input[ride]];
+    
+    Vehicle[] vehicles=new Vehicle[input[vehicle]];
      
     map = new int [input[row]][input[column]]; 
      
@@ -47,6 +54,16 @@ public class Main
       earliestStart = Integer.parseInt(inFile.next()); 
       latestFinish = Integer.parseInt(inFile.next()); 
     } 
+    
+    sortRides(rides);
+    for (i=0;i<vehicles.length;i++)
+    {
+    	vehicles[i].assignRide(rides[c]);
+    	c++;
+    }
+    
+    
+
      
 //    while(i < 6) 
 //    { 
@@ -54,6 +71,18 @@ public class Main
 //      i++; 
 //    } 
   } 
+  
+  public static void sortRides(Ride ride[]) {
+      for(int i=1; i<ride.length; i++) {
+         int temp=0;
+         if(ride[i-1].earliest > ride[i].earliest) {
+            temp = ride[i-1].earliest;
+            ride[i-1].earliest = ride[i].earliest;
+            ride[i].earliest = temp;
+         }
+      }
+   }
+ 
    
   public static void readFile() 
   { 
