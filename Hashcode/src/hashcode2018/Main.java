@@ -1,4 +1,4 @@
-package hashcode2018; 
+//package hashcode2018; 
  
 import java.io.*; 
 import java.util.Scanner; 

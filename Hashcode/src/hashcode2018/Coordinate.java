@@ -1,4 +1,4 @@
-package hashcode2018;
+//package hashcode2018;
 
 public class Coordinate
 {

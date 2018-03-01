@@ -1,4 +1,5 @@
-package hashcode2018;
+//package hashcode2018;
+import java.util.ArrayList;
 
 public class Vehicle
 {
@@ -10,9 +11,11 @@ public class Vehicle
 
   private int phase;
 
-  private int rideStatus;
+  private boolean inRide;
 
   private Ride assignedRide;
+
+  private ArrayList<Integer> rides = new ArrayList<Integer>();
 
   private static int PHASE_GO_TO_START_INTERSECTION = 1;
   private static int PHASE_WAITING = 2;
@@ -34,7 +37,8 @@ public class Vehicle
     startIntersection = ride.getStartIntersection();
     finalIntersection = ride.getFinalIntersection();
     phase = PHASE_GO_TO_START_INTERSECTION;
-    rideStatus = DOING_RIDE;
+    inRide = true;
+    rides.add(ride.getId());
   }
 
   public void moveVehicle(int step)
@@ -44,18 +48,16 @@ public class Vehicle
     if (phase == PHASE_GO_TO_START_INTERSECTION)
       if (currentPosition.equals(startIntersection))
         phase = PHASE_WAITING;
-        phase = WAITING;
       else
         moveVehicleTowardsDesiredCoordinate(startIntersection);
 
     if (phase == PHASE_WAITING)
       if (step >= assignedRide.getEarliest())
-      if (step >= ride.getEarliest())
         phase = PHASE_GO_TO_FINAL_INTERSECTION;
 
     if (phase == PHASE_GO_TO_FINAL_INTERSECTION)
       if (currentPosition.equals(finalIntersection))
-        rideStatus = NOT_DOING_RIDE;
+        inRide = false;
       else
         moveVehicleTowardsDesiredCoordinate(finalIntersection);
   }
@@ -76,8 +78,10 @@ public class Vehicle
 		  b++;
 	  else if (y < b)
 		  b--;
+  }
 
-    }
-
+  public boolean isInRide()
+  {
+    return inRide;
   }
 }
