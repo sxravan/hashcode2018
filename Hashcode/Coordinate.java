@@ -1,3 +1,5 @@
+package hashcode2018;
+
 public class Coordinate
 {
   private int x;
