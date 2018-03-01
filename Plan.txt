@@ -1,0 +1,84 @@
+At each step nou chekE:
+
+if (phase = go to start intersection)
+  Eski lin ariv so start_intersection?
+
+  if (yes)
+    Eski currentTime >= earliest step?
+    if (yes)
+      phase = go to final_intersection
+    else
+      wait until earliest step
+
+else (phase = go to final intersection)
+  Eski lin ariv so final intersection?
+  if (yes)
+    Assign to it the next ride
+  else
+    go to final intersection
+
+
+
+MOVING THE VEHICLE
+current position = (a, b), final destination = (x, y)
+
+if (x > a)
+  a++
+else if (x < a)
+  a--
+else if (y > b)
+  b++
+else if (y < b)
+  b--
+
+//here the car has reached (x, y)
+
+
+METHODS:
+1. pou bouge vehicule- in main and another in Vehicle
+2.i. pou chekE if in reach start_destination
+2.ii. pou chekE if in reach final_destination
+//2 Just uses a method isCoordinateEqual(the desired coordinate (x, y))
+3. wait until earliest step
+4. Assign next ride to finished vehicle
+
+
+
+CLASSES
+VEHICLE: phase, current coordinate, next goto coordinate
+RIDE: has a start_intersection, final_intersection
+COORDINATE: int x, int y
+MAIN: global timer
+
+DATA STRUCTURES:
+1. Array of vehicles
+2. Array of rides
+
+
+1. positionne tou vehicles lor (0, 0)
+2. sort rides according to earliest time
+3. assign all vehicles a ride
+4. start timer
+5. moveAllCars() -> calls the move method in Vehicle -> this decides what each car should do-> wait, move to start or move to final
+6. Has one of the cars finished it's ride?
+    yes: assign new ride, currentTimer++
+    no: currentTimer++, loop to 5
+7. repeat 5, 6 until currentTime < T
+
+
+
+
+
+
+
+
+
+
+
+
+IMPROVEMENTS:
+1. when a ride ends, assign to it the next ride with the closest start intersection / earliest start
+
+2. Sort rides according to earliest step
+
+3. pair rides R1, R2 where R1.start_intersection is close to R2.final_intersection
