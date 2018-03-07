@@ -1,4 +1,4 @@
-package hashcode2018;
+//package hashcode2018;
  
 import java.io.*; 
 import java.util.Scanner;
@@ -51,8 +51,6 @@ public class Main
         } 
       }
       
-      System.out.print(rideFrom[0][0]);
-      
       for (i = 0; i < input[ride]; i++) 
       {
         rideFrom[i][0] = Integer.parseInt(inFile.next()); 
@@ -61,7 +59,6 @@ public class Main
         rideTo[i][1] = Integer.parseInt(inFile.next()); 
         earliestStart[i] = Integer.parseInt(inFile.next()); 
         latestFinish[i] = Integer.parseInt(inFile.next());
-        
       }
 
       for (i=0;i<rides.length;i++)
@@ -71,7 +68,7 @@ public class Main
         int earliestTime = earliestStart[i];
         int latestTime = latestFinish[i];
 
-      rides[i]=new Ride(i, start_intersection, final_intersection, earliestTime, latestTime);
+        rides[i]=new Ride(i, start_intersection, final_intersection, earliestTime, latestTime);
       }
       
       for (i=0;i<vehicles.length;i++)
@@ -81,6 +78,12 @@ public class Main
 
       
       sortRides(rides);
+
+      for (Ride ride : rides)
+      {
+        System.out.println(ride.getId());
+        System.out.println(ride.getStartIntersection());
+      }
       for (i=0;i<vehicles.length;i++)
       {
         vehicles[i].assignRide(rides[c]);
@@ -115,7 +118,9 @@ public class Main
           rideIds += rideId + " ";
 
         writer.write(numOfRides + " " + rideIds);
+        writer.newLine();
       }
+      writer.close();
     }
     catch (IOException e)
     {

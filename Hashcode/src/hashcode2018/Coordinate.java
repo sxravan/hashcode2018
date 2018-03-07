@@ -1,4 +1,4 @@
-package hashcode2018;
+//package hashcode2018;
 
 public class Coordinate
 {
@@ -37,5 +37,10 @@ public class Coordinate
       return true;
     else
       return false;
+  }
+
+  public String toString()
+  {
+    return "(" + x + ", " + y + ")";
   }
 }

@@ -1,4 +1,4 @@
-package hashcode2018;
+//package hashcode2018;
 import java.util.ArrayList;
 
 public class Vehicle
@@ -27,8 +27,7 @@ public class Vehicle
 
   public Vehicle()
   {
-    this.currentPosition.setX(0);
-    this.currentPosition.setY(0);
+    currentPosition = new Coordinate(0, 0);
   }
 
   public void assignRide(Ride ride)
